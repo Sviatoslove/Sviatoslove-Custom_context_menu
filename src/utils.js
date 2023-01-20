@@ -11,8 +11,16 @@ export function getRandomColor() {
   return color;
 }
 
-export function renderMenuHTML(container) {
-  container.innerHTML = `
-  
-  `
-} 
+export function getCoordinatesForMenu(coordinates, elem) {
+  const { width, height } = document.body.getBoundingClientRect()
+  if(coordinates.x > width - elem.clientWidth) {
+    elem.style.left = coordinates.x - elem.clientWidth + 'px'
+  } else {
+    elem.style.left = coordinates.x + 'px'
+  }
+  if(coordinates.y > height - elem.clientHeight) {
+    elem.style.top = coordinates.y - elem.clientHeight + 'px'
+  } else {
+    elem.style.top = coordinates.y + 'px'
+  }
+}

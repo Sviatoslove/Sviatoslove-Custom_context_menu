@@ -5,5 +5,6 @@ const app = new ContextMenu('.menu')
 
 document.body.addEventListener('contextmenu', event => {
  event.preventDefault()
- app.open()
+ const { x, y } = event
+ app.open({x: x , y: y})
 })
