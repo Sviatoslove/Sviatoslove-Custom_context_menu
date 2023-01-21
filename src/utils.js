@@ -3,7 +3,7 @@ export function random(min, max) {
 }
 
 // clicker
-export function runClickerTimer(warning, button, time, clicks) {
+export function runClicker(warning, button, time, clicks) {
 
   warning.textContent = '3';
   warning.className = 'clicker-warning';

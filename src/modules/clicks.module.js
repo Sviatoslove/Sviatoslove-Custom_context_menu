@@ -1,5 +1,5 @@
 import { Module } from '../core/module'
-import { runClickerTimer } from '../utils';
+import { runClicker } from '../utils';
 
 
 
@@ -13,6 +13,6 @@ export class ClicksModule extends Module {
         this.clicks = 0;
     }
     trigger() {
-        runClickerTimer(this.warning, this.clickerButton, this.time, this.clicks)
+        runClicker(this.warning, this.clickerButton, this.time, this.clicks)
     }
 }
