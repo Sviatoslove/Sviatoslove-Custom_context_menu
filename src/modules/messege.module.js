@@ -34,7 +34,6 @@ export class Messege extends Module {
     menuItem.className = 'menu-item'
     menuItem.dataset.type = this.type
     menuItem.textContent = this.text
-    // document.body.append(menuItem)
     unlist.append(menuItem)
     // return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`
   }
