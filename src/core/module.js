@@ -10,9 +10,7 @@ export class Module {
     this.text = text
   }
 
-  trigger() {
-    throw new Error(`Trigger method should be implemented in module "${this.type}"`)
-  }
+  trigger() {}
 
   toHTML() {
     return `<li class="menu-item" data-type="${this.type}">${this.text}</li>`
