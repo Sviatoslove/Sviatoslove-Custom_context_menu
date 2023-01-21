@@ -40,3 +40,28 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.clicker-warning {
+    width: max-content;
+    color: black;
+    background: red;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: impact;
+}
+
+.clicker-button {
+    display: block;
+    margin: auto;
+    font-size: 16px;
+    margin-top: 10px;
+    font-family: impact;
+    padding: 3px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
