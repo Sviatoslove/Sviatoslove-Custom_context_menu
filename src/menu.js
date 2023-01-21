@@ -13,6 +13,7 @@ export class ContextMenu extends Menu {
   this.el.innerHTML = functionStation.renderItemsHTML(this.modules)
   functionStation.getCoordinatesForMenu(coordinates, this.el)
   this.el.addEventListener('click', event => {
+   event.stopImmediatePropagation()
    functionStation.getStartTrigger(event, this.el, this.modules)
   })
  }

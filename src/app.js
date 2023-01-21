@@ -6,7 +6,7 @@ import { ShapeModule } from './modules/shape.module'
 
 const app = new ContextMenu('.menu')
 
-app.greetingStart()
+// app.greetingStart()
 
 app.add(new ClicksModule('clicks', 'Считать клики(за 3 секунды)'))
 app.add(new ShapeModule('shape', 'Создать фигуру'))
