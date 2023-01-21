@@ -28,6 +28,16 @@ body {
     display: block;
 }
 
+.menu.timer {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    width: 400px;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
 .menu .menu-item {
     padding: 8px 10px;
     font-size: 1rem;

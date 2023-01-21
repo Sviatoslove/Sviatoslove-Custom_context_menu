@@ -1,34 +1,32 @@
 import {Menu} from './core/menu'
-import { BackgroundModule } from './modules/background.module'
-import { getCoordinatesForMenu } from './utils'
+import * as functionStation from './core/utils/contextMenu'
+
 
 export class ContextMenu extends Menu {
  constructor(selector) {
   super(selector)
-  this.background = new BackgroundModule('background', 'Поменять цвет')
+  this.modules = []
  }
 
  open(coordinates) {
   this.el.classList.add('open')
-  this.add()
-  getCoordinatesForMenu(coordinates, this.el)
+  this.el.innerHTML = functionStation.renderItemsHTML(this.modules)
+  functionStation.getCoordinatesForMenu(coordinates, this.el)
   this.el.addEventListener('click', event => {
-   const { type } = event.target.dataset
-   switch(type) {
-    case 'background':
-     this.background.trigger()
-    break;
-   }
-   this.el.classList.remove('open')
+   functionStation.getStartTrigger(event, this.el, this.modules)
   })
  }
 
  close() {
   this.el.classList.remove('open')
+  this.el.innerHTML = ''
  }
 
- add() {
-  this.el.innerHTML = ''
-  this.el.innerHTML = this.background.toHTML()
+ add(module) {
+  this.modules.push(module)
  }
+
+ greetingStart() {
+  setInterval(() => {functionStation.decreaseTimerHello(this.el)}, 1000)
+ } 
 }

@@ -1,5 +1,5 @@
 import {Module} from '../core/module'
-import * as functionStation from '../utils'
+import { getRandomColor } from '../core/utils/background'
 
 export class BackgroundModule extends Module {
  constructor(type, text) {
@@ -8,6 +8,6 @@ export class BackgroundModule extends Module {
  }
 
  trigger() {
-  this.container.style.backgroundColor = functionStation.getRandomColor()
+  this.container.style.backgroundColor = getRandomColor()
  }
 }
