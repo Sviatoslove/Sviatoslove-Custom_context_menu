@@ -40,3 +40,15 @@ body {
 .menu .menu-item:hover {
     background: #343434;
 }
+
+.circle {
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.square {
+    position: absolute;
+}
+
+
