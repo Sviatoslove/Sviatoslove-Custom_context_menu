@@ -26,4 +26,4 @@ setTimeout(() => {
   const { x, y } = event
   app.open({x: x , y: y})
  })
-},17000)
+}, 17000)
