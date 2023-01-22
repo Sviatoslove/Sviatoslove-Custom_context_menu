@@ -1,9 +1,11 @@
 import { Module } from '../core/module'
 
-const audio = document.createElement('audio')
-audio.src = 'https://freemusicarchive.org/track/03_-_Glacier/download/'
-// audio.display = none
-document.body.append(audio)
+const audio = new Audio(
+  'https://freemusicarchive.org/track/03_-_Glacier/download/'
+)
+const musicSite = document.createElement('p')
+musicSite.className = 'musicSite'
+document.body.append(musicSite)
 
 export class BackgroundMusicModul extends Module {
   constructor(type, text) {
@@ -13,8 +15,12 @@ export class BackgroundMusicModul extends Module {
     if (audio.paused) {
       audio.volume = 0.2
       audio.play()
+      this.text = 'выключить фоновую музыку'
+      musicSite.textContent = 'Music: www.freemusicarchive.org'
     } else {
       audio.pause()
+      this.text = 'включить фоновую музыку'
+      musicSite.textContent = ''
     }
   }
 }
