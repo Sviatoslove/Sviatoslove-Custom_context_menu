@@ -1,8 +1,6 @@
 import { Module } from '../core/module'
 import { runClicker } from '../utils';
 
-
-
 export class ClicksModule extends Module {
     constructor (type, text) {
         super(type, text)

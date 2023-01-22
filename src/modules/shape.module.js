@@ -9,11 +9,6 @@ export class ShapeModule extends Module {
     trigger() {
         const body = document.querySelector('body')
         let randomShape = Math.floor((Math.random() * 5) + 1);
-        // if (randomShape == 1) {
-        //     functionStation.createRandomShape(body, 'circle')
-        // } else if (randomShape == 2) {
-        //     functionStation.createRandomShape(body, 'square')
-        // }
         switch(randomShape) {
             case 1:
                 functionStation.createRandomShape(body, 'circle')

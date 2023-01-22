@@ -1,13 +1,24 @@
 import { Module } from "../core/module";
-import { createTimer } from "../core/utils/createTimer";
+import { createTimer, countDownTimer } from "../core/utils/createTimer";
 
 export class TimerModule extends Module {
   constructor(type, text) {
     super(type, text);
-    // createTimer();
+
+    this.container = document.createElement('div')
+    this.container.className = 'containerTimer'
   }
 
   trigger() {
-    createTimer();
+   
+
+    createTimer(this.container);
+
+    countDownTimer();
+
+    const refreshId = setInterval(() => {
+      console.log('setInterval')
+    countDownTimer(refreshId)
+    }, 500);
   }
 }

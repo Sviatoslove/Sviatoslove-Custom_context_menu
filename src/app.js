@@ -4,10 +4,12 @@ import { BackgroundModule } from './modules/background.module'
 import { ClicksModule } from './modules/clicks.module'
 import { ShapeModule } from './modules/shape.module'
 import { SoundsModule } from './modules/sounds.module'
+import { TimerModule } from './modules/timer.module'
+import { Messege } from './modules/messege.module'
 
 const app = new ContextMenu('.menu')
-const app1 = new ShapeModule('shape', 'Создать фигуру')
-const app2 = new BackgroundModule('background', 'Поменять цвет')
+// const app1 = new ShapeModule('shape', 'Создать фигуру')
+// const app2 = new BackgroundModule('background', 'Поменять цвет')
 
 // setInterval(() => {
 //  app1.trigger()
@@ -19,8 +21,8 @@ const app2 = new BackgroundModule('background', 'Поменять цвет')
 app.add(new ClicksModule('clicks', 'Считать клики(за 3 секунды)'))
 app.add(new ShapeModule('shape', 'Создать фигуру'))
 app.add(new BackgroundModule('background', 'Поменять цвет'))
-app.add(new BackgroundModule('messege', 'Вызвать сообщение'))
-app.add(new BackgroundModule('timer', 'Таймер отсчёта'))
+app.add(new Messege('messege', 'Вызвать сообщение'))
+app.add(new TimerModule('timer', 'Таймер отсчёта'))
 app.add(new SoundsModule('sounds', 'Случайный звук'))
 
 
