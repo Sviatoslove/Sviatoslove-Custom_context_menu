@@ -1,7 +1,7 @@
 export function createRandomPosition() {
   const mainFormTimer = document.querySelector(".mainFormTimer");
 
-  const size = getRandomNumber(10, 10);
+  const size = getRandomNumber(10, 140);
   const { width, heigth } = document.body.getBoundingClientRect();
   const x = getRandomNumber(0, width - size);
   const y = getRandomNumber(0, heigth - size);

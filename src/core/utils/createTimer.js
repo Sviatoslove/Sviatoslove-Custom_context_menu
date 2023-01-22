@@ -24,10 +24,13 @@ export function createTimer() {
     let minutes = Math.floor(time / 60);
     let seconds = time % 60;
     createRandomPosition();
+    const form = document.querySelector(".mainFormTimer");
     if (time === -1) {
-      document.querySelector("form").innerHTML = "";
+      // document.querySelector("form").innerHTML = "";
+      form.classList.add("hiddenForm");
       return;
     }
+    form.classList.remove("hiddenForm");
     if (time === 0) {
       appendTime.innerHTML = "Конец таймера";
       time--;

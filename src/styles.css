@@ -53,6 +53,10 @@ body {
   position: absolute;
 }
 
+.hiddenForm {
+  visibility: hidden;
+}
+
 .textTimer {
   color: aqua;
 }
