@@ -1,7 +1,6 @@
 import './styles.css'
 
 import { Messege } from './modules/messege.module'
-import { getAllMes } from './utils'
 
 const getMessege = new Messege('messege', 'Высплывающее сообщение')
 
@@ -11,4 +10,3 @@ const getMessege = new Messege('messege', 'Высплывающее сообще
 document.addEventListener('click', () => {
   getMessege.trigger()
 })
-
