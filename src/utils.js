@@ -111,6 +111,8 @@ export function createRandomShape(body, selector) {
   //   });
   // }, 10000)
 // clicker
+}
+
 export function runClicker(warning, button, time, clicks) {
 
   warning.textContent = '3';
