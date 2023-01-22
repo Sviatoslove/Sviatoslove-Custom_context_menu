@@ -8,11 +8,9 @@ const MES_URL = 'https://jsonplaceholder.typicode.com/comments'
 export const getAllMes = async () => {
   const response = await fetch(MES_URL)
   const result = await response.json()
-  console.log(result)
   let rand = Math.floor(Math.random() * result.length)
   let rValue = result[rand].body
   console.log(rValue)
-
 
   const customMessege = document.createElement('div')
   customMessege.className = 'messege'
@@ -23,6 +21,7 @@ export const getAllMes = async () => {
   setTimeout(() => {
     customMessege.remove()
   }, 5000)
+}
 
   // document.addEventListener('click', (event) => {
   //   const { target } = event
@@ -36,4 +35,3 @@ export const getAllMes = async () => {
   //   }
 
   // })
-}
