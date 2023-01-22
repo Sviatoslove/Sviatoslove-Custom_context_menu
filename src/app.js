@@ -10,7 +10,7 @@ import { BackgroundMusicModul } from './modules/backgroundMusic.module'
 
 const app = new ContextMenu('.menu')
 
-// app.greetingStart()
+app.greetingStart()
 
 app.add(new ClicksModule('clicks', 'Считать клики(за 3 секунды)'))
 app.add(new ShapeModule('shape', 'Создать фигуру'))
@@ -21,10 +21,9 @@ app.add(new SoundsModule('sounds', 'Случайный звук'))
 app.add(new BackgroundMusicModul('backgroundMusic', 'Включить фоновую музыку'))
 
 setTimeout(() => {
- 
+ document.body.addEventListener('contextmenu', event => {
+  event.preventDefault()
+  const { x, y } = event
+  app.open({x: x , y: y})
+ })
 },17000)
-document.body.addEventListener('contextmenu', event => {
- event.preventDefault()
- const { x, y } = event
- app.open({x: x , y: y})
-})
