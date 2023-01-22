@@ -6,17 +6,11 @@ import { ShapeModule } from './modules/shape.module'
 import { SoundsModule } from './modules/sounds.module'
 import { TimerModule } from './modules/timer.module'
 import { Messege } from './modules/messege.module'
+import { BackgroundMusicModul } from './modules/backgroundMusic.module'
 
 const app = new ContextMenu('.menu')
-// const app1 = new ShapeModule('shape', 'Создать фигуру')
-// const app2 = new BackgroundModule('background', 'Поменять цвет')
 
-// setInterval(() => {
-//  app1.trigger()
-//  app2.trigger()
-// }, 200)
-
-// app.greetingStart()
+app.greetingStart()
 
 app.add(new ClicksModule('clicks', 'Считать клики(за 3 секунды)'))
 app.add(new ShapeModule('shape', 'Создать фигуру'))
@@ -24,14 +18,12 @@ app.add(new BackgroundModule('background', 'Поменять цвет'))
 app.add(new Messege('messege', 'Вызвать сообщение'))
 app.add(new TimerModule('timer', 'Таймер отсчёта'))
 app.add(new SoundsModule('sounds', 'Случайный звук'))
+app.add(new BackgroundMusicModul('backgroundMusic', 'Включить фоновую музыку'))
 
-
-// setTimeout(() => {
-
-// },17000)
-
-document.body.addEventListener('contextmenu', event => {
- event.preventDefault()
- const { x, y } = event
- app.open({x: x , y: y})
-})
+setTimeout(() => {
+ document.body.addEventListener('contextmenu', event => {
+  event.preventDefault()
+  const { x, y } = event
+  app.open({x: x , y: y})
+ })
+},17000)

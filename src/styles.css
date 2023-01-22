@@ -124,6 +124,12 @@ body {
     max-width: 300px;
 }
 
-.hidden {
-    visibility: hidden;
+.musicSite {
+  position: absolute;
+  bottom: 1%;
+  left: 19%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: rgba(103, 101, 101, 0.6);
+  font-size: 20px;
 }

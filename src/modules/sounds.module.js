@@ -17,8 +17,7 @@ export class SoundsModule extends Module {
     let oscillatorNode = context.createOscillator()
     let gainNode = context.createGain()
 
-    oscillatorNode.type =
-      waveforms[Math.floor(Math.random() * waveforms.length)]
+    oscillatorNode.type = waveforms[Math.floor(Math.random() * waveforms.length)]
 
     let frequency = random(100, 4000)
     oscillatorNode.frequency.value = frequency

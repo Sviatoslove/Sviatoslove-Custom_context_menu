@@ -2,16 +2,14 @@ export class Menu {
   constructor(selector) {
     this.el = document.querySelector(selector)
 
-    // setTimeout(() => {
-    
-    // },17000)
-
-    document.body.addEventListener('click', event => {
-      if (event.target.offsetParent !== this.el) {
-        this.close()
-      }
-    })
-    
+    setTimeout(() => {
+      document.body.addEventListener('click', event => {
+        if (event.target.offsetParent !== this.el) {
+          this.close()
+        }
+      })
+    },17000)
+   
   }
 
   open() {

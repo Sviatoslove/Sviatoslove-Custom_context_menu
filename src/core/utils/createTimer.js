@@ -1,16 +1,16 @@
-import { random } from "../../utils";
-import { getRandomColor } from "./background";
+import { random } from "../../utils"
+import { getRandomColor } from "./background"
 
 let time
 
 export function createTimer(container) {
-  const startingTime = Number(prompt("Введите время в минутах")); //в минутах
+  const startingTime = Number(prompt("Введите время в минутах")) //в минутах
 
-  time = startingTime * 60; //в секундах
+  time = startingTime * 60 //в секундах
 
   if (startingTime % 1 !== 0) {
     //проверка на целое число при вводе
-    alert("Введенное число должно быть целым!");
+    alert("Введенное число должно быть целым!")
     return
   }
 
@@ -22,20 +22,20 @@ export function createTimer(container) {
     <p>
       <span id="minutesAndSeconds" class="countDownTimer"></span>
     </p>
-  </form>`;
+  </form>`
 
   container.innerHTML = timer
   
-  document.body.append(container);
+  document.body.append(container)
 }
 
 export function countDownTimer(refreshId) {
-  let appendTime = document.querySelector("#minutesAndSeconds");
+  let appendTime = document.querySelector("#minutesAndSeconds")
 
-  let minutes = Math.floor(time / 60);
-  let seconds = time % 60;
-  createRandomPosition();
-  const form = document.querySelector(".mainFormTimer");
+  let minutes = Math.floor(time / 60)
+  let seconds = time % 60
+  createRandomPosition()
+  const form = document.querySelector(".mainFormTimer")
  
   if (time === 0) {
     appendTime.innerHTML = "Конец таймера";

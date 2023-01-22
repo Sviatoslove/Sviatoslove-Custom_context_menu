@@ -16,7 +16,6 @@ export class Messege extends Module {
     const result = await response.json()
     let rand = Math.floor(Math.random() * result.length)
     let rValue = result[rand].body
-    console.log(rValue)
 
     if (!customMessege.hasAttribute('class')) {
       customMessege.textContent = rValue
