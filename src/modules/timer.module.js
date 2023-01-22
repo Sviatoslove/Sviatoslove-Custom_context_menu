@@ -1,6 +1,13 @@
 import { Module } from "../core/module";
-console.log("Hello");
+import { createTimer } from "../core/utils/createTimer";
 
 export class TimerModule extends Module {
-  //start
+  constructor(type, text) {
+    super(type, text);
+    // createTimer();
+  }
+
+  trigger() {
+    createTimer();
+  }
 }
