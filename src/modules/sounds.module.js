@@ -3,12 +3,14 @@ import { random } from '../utils'
 
 let context = null
 let waveforms = ['sine', 'square', 'sawtooth', 'triangle']
+
 export class SoundsModule extends Module {
   constructor(type, text) {
     super(type, text)
   }
+
   trigger() {
-    if (context === null) {
+    if (!context) {
       context = new AudioContext()
     }
 
@@ -20,10 +22,6 @@ export class SoundsModule extends Module {
 
     let frequency = random(100, 4000)
     oscillatorNode.frequency.value = frequency
-
-    console.log(
-      `Форма волны воспроизведения звука - ${oscillatorNode.type}, частота - ${frequency}Гц!`
-    ) // для наглядности
 
     gainNode.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1)
 

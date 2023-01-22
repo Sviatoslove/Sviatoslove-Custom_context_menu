@@ -3,6 +3,7 @@ import { ContextMenu } from './menu.js'
 import { BackgroundModule } from './modules/background.module'
 import { ClicksModule } from './modules/clicks.module'
 import { ShapeModule } from './modules/shape.module'
+import { SoundsModule } from './modules/sounds.module'
 
 const app = new ContextMenu('.menu')
 
@@ -13,6 +14,7 @@ app.add(new ShapeModule('shape', 'Создать фигуру'))
 app.add(new BackgroundModule('background', 'Поменять цвет'))
 app.add(new BackgroundModule('messege', 'Вызвать сообщение'))
 app.add(new BackgroundModule('timer', 'Таймер отсчёта'))
+app.add(new SoundsModule('sounds', 'Случайный звук'))
 
 
 document.body.addEventListener('contextmenu', event => {
@@ -20,11 +22,3 @@ document.body.addEventListener('contextmenu', event => {
  const { x, y } = event
  app.open({x: x , y: y})
 })
-import { SoundsModule } from './modules/sounds.module'
-
-const randomSounds = new SoundsModule('sounds', 'случайный звук')
-
-// document.addEventListener('click', () => {
-//   randomSounds.trigger()
-// })
-// Проверка работы souns.module
