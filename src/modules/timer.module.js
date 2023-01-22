@@ -10,10 +10,11 @@ export class TimerModule extends Module {
   }
 
   trigger() {
-    createTimer(this.container);
-    countDownTimer();
-    const refreshId = setInterval(() => {
-    countDownTimer(refreshId)
-    }, 500);
+    if(createTimer(this.container)) {
+      countDownTimer();
+      const refreshId = setInterval(() => {
+      countDownTimer(refreshId)
+      }, 1000);
+    }
   }
 }

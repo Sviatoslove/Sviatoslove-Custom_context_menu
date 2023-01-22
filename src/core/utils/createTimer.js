@@ -5,6 +5,10 @@ let time
 
 export function createTimer(container) {
   const startingTime = Number(prompt("Введите время в минутах")) //в минутах
+  
+  if(startingTime === 0) {
+    return false
+  }
 
   time = startingTime * 60 //в секундах
 
@@ -27,6 +31,7 @@ export function createTimer(container) {
   container.innerHTML = timer
   
   document.body.append(container)
+  return true
 }
 
 export function countDownTimer(refreshId) {
