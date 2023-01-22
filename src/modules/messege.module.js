@@ -1,6 +1,6 @@
 import { Module } from '../core/module'
 import { randomMessege } from '../utils'
-
+import { getAllMes } from '../utils'
 
 
 
@@ -10,7 +10,7 @@ export class Messege extends Module {
   }
 
   trigger() {
-    randomMessege()
+    getAllMes()
   }
 
   toHTML() {
