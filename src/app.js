@@ -20,3 +20,11 @@ document.body.addEventListener('contextmenu', event => {
  const { x, y } = event
  app.open({x: x , y: y})
 })
+import { SoundsModule } from './modules/sounds.module'
+
+const randomSounds = new SoundsModule('sounds', 'случайный звук')
+
+// document.addEventListener('click', () => {
+//   randomSounds.trigger()
+// })
+// Проверка работы souns.module
