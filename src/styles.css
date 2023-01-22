@@ -53,6 +53,7 @@ body {
     right: 15px;
     opacity: .4;
     box-shadow: 0px 0px 9px 7px gray;
+    max-width: 300px;
 }
 
 
