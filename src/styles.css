@@ -57,8 +57,6 @@ body {
     cursor: pointer;
 }
 
-.square {
+.square, .triangleUp, .triangleDown, .squareRadius {
     position: absolute;
 }
-
-

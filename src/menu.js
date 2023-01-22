@@ -28,6 +28,6 @@ export class ContextMenu extends Menu {
  }
 
  greetingStart() {
-  setInterval(() => {functionStation.decreaseTimerHello(this.el)}, 1000)
+  const refreshId = setInterval(() => {functionStation.decreaseTimerHello(this.el, refreshId)}, 1000)
  } 
 }
