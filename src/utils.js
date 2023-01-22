@@ -28,6 +28,7 @@ export function runClicker(warning, button, time, clicks) {
     if (time === 3) {
       warning.textContent = 'Start!';
       warning.style.background = 'rgba(0, 255, 68, 0.528)';
+      warning.style.color = 'black';
       clicks = 0;
       return time++
     } 
@@ -54,8 +55,8 @@ export function runClicker(warning, button, time, clicks) {
             })
         }, 6000)
 
-        // Подсчет ВСЕХ кликов 
-        document.addEventListener('click', () => {
-            clicks++
-        })
+    // Подсчет ВСЕХ кликов 
+    document.addEventListener('click', () => {
+      clicks++
+    })
 }
