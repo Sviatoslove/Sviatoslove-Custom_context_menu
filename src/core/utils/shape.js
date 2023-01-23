@@ -1,5 +1,4 @@
-import { random } from "../../utils"
-import { getRandomColor } from "./background"
+import { random, getRandomColor } from "../../utils"
 
 export function createRandomShape(body, selector) {
 
@@ -39,10 +38,11 @@ export function createRandomShape(body, selector) {
  } else if (selector === 'squareRadius') {
   shape.style.borderRadius = borderRadius + 'px'
  }
+
  body.append(shape)
  setTimeout(() => {
   body.childNodes.forEach(element => {
    element.className && element.className.includes('shape') ? element.remove() : null
   })
- }, 6000)
+ }, 3000)
 }

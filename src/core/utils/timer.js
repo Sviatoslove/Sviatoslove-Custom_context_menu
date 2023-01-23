@@ -1,11 +1,9 @@
-import { random } from "../../utils"
-import { getRandomColor } from "./background"
-import { getCoordinatesForMenu } from "./contextMenu"
+import { getCoordinates, getRandomColor } from '../../utils'
 
 let time
 
 export function createTimer(container) {
-  const startingTime = Number(prompt("Введите время в минутах")) //в минутах
+  const startingTime = Number(prompt('Введите время в минутах')) //в минутах
   if(startingTime === 0 || container.children.length) {
     alert('Вы не ввели число либо таймер уже запущен.')
     return false
@@ -30,24 +28,25 @@ export function createTimer(container) {
   </form>`
 
   container.innerHTML = timer
-  
   document.body.append(container)
+  
   return true
 }
 
 export function countDownTimer(refreshId) {
-  let appendTime = document.querySelector("#minutesAndSeconds")
+  let appendTime = document.querySelector('#minutesAndSeconds')
 
   let minutes = Math.floor(time / 60)
   let seconds = time % 60
-  createRandomPosition()
-  const form = document.querySelector(".mainFormTimer")
+  createRandomPositionAndColor()
+  const form = document.querySelector('.mainFormTimer')
  
   if (time === 0) {
-    appendTime.innerHTML = "Конец таймера"
+    appendTime.innerHTML = 'Конец таймера'
     clearInterval(refreshId)
     setTimeout(() => {
-      form.remove()
+      form.parentElement.remove()
+      form.parentElement.innerHTML = ''
     }, 1000)
   } else {
     if (minutes < 10) {
@@ -64,16 +63,20 @@ export function countDownTimer(refreshId) {
   }
 }
 
-function createRandomPosition() {
-  const mainFormTimer = document.querySelector(".mainFormTimer")
+function createRandomPositionAndColor() {
+  const mainFormTimer = document.querySelector('.mainFormTimer')
 
-  getCoordinatesForMenu(mainFormTimer)
+  mainFormTimer.style.left = '40%'
+  mainFormTimer.style.right = '40%'
+
+  getCoordinates(mainFormTimer)
 
   let getColorShadow = getRandomColor()
   let getColorBackGround = getRandomColor()
   let getColorText = getRandomColor()
 
   document.querySelector('#minutesAndSeconds').style.color = getColorText
+  document.querySelector('.textTimer').style.color = getColorShadow
   mainFormTimer.style.background = getColorBackGround
   mainFormTimer.style.boxShadow = `0 0 2px ${getColorShadow}, 0 0 10px ${getColorShadow}`
 }

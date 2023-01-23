@@ -29,13 +29,13 @@ body {
 }
 
 .menu.timer {
-    padding: 10px;
-    text-align: center;
-    display: block;
-    width: 400px;
-    background-color: transparent;
-    font-weight: bold;
-    font-size: 3rem;
+  padding: 10px;
+  text-align: center;
+  display: block;
+  width: 400px;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 .menu .menu-item {
@@ -48,56 +48,55 @@ body {
 }
 
 .menu .menu-item:hover {
-    background: #343434;
+  background: #343434;
 }
 
 .circle {
-    border-radius: 50%;
-    position: absolute;
-    cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  cursor: pointer;
 }
 
 .square, .triangleUp, .triangleDown, .squareRadius {
-    position: absolute;
+  position: absolute;
 }
 
 .clicker-warning {
-    width: max-content;
-    color: black;
-    background: red;
-    border-radius: 5px;
-    border: 1px solid black;
-    margin: auto;
-    padding: 15px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: impact;
+  width: max-content;
+  color: black;
+  background: red;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: auto;
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: impact;
 }
 
 .clicker-button {
-    display: block;
-    margin: auto;
-    font-size: 16px;
-    margin-top: 10px;
-    font-family: impact;
-    padding: 3px;
-    cursor: pointer;
-    letter-spacing: 1px;
+  display: block;
+  margin: auto;
+  font-size: 16px;
+  margin-top: 10px;
+  font-family: impact;
+  padding: 3px;
+  cursor: pointer;
+  letter-spacing: 1px;
   background: #343434;
 }
 
 .mainFormTimer {
-    width: fit-content;
-    height: fit-content;
-    text-align: center;
-    background-color: blue;
-    letter-spacing: 2px;
-    padding: 1px 5px 1px 5px;
-    border-radius: 10px;
-    font-size: 20px;
-    font-weight: bolder;
-    position: absolute;
+  width: 300px;
+  text-align: center;
+  background-color: blue;
+  letter-spacing: 2px;
+  padding: 1px 5px 1px 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bolder;
+  position: absolute;
 }
 
 .textTimer {
@@ -110,18 +109,18 @@ body {
 }
 
 .messege {
-    padding: 8px 10px;
-    font-size: 1rem;
-    color: white;
-    background: #343434;
-    box-sizing: border-box;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 10px;
-    right: 15px;
-    opacity: .4;
-    box-shadow: 0px 0px 9px 7px gray;
-    max-width: 300px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: white;
+  background: #343434;
+  box-sizing: border-box;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  opacity: .4;
+  box-shadow: 0px 0px 9px 7px gray;
+  max-width: 300px;
 }
 
 .musicSite {

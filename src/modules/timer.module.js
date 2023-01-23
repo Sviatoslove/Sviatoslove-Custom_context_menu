@@ -1,5 +1,5 @@
 import { Module } from "../core/module"
-import { createTimer, countDownTimer } from "../core/utils/createTimer"
+import { createTimer, countDownTimer } from "../core/utils/timer"
 
 export class TimerModule extends Module {
   constructor(type, text) {
@@ -14,7 +14,7 @@ export class TimerModule extends Module {
       countDownTimer()
       const refreshId = setInterval(() => {
       countDownTimer(refreshId)
-      }, 100)
+      }, 1000)
     }
   }
 }
