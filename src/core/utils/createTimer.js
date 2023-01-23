@@ -1,12 +1,13 @@
 import { random } from "../../utils"
 import { getRandomColor } from "./background"
+import { getCoordinatesForMenu } from "./contextMenu"
 
 let time
 
 export function createTimer(container) {
   const startingTime = Number(prompt("Введите время в минутах")) //в минутах
-  
-  if(startingTime === 0) {
+  if(startingTime === 0 || container.children.length) {
+    alert('Вы не ввели число либо таймер уже запущен.')
     return false
   }
 
@@ -43,47 +44,36 @@ export function countDownTimer(refreshId) {
   const form = document.querySelector(".mainFormTimer")
  
   if (time === 0) {
-    appendTime.innerHTML = "Конец таймера";
+    appendTime.innerHTML = "Конец таймера"
     clearInterval(refreshId)
     setTimeout(() => {
       form.remove()
     }, 1000)
   } else {
     if (minutes < 10) {
-      minutes = "0" + minutes;
+      minutes = "0" + minutes
     }
     if (seconds > 59) {
-      seconds = "00";
+      seconds = "00"
     }
     if (seconds < 10) {
-      seconds = "0" + seconds;
+      seconds = "0" + seconds
     }
-    appendTime.innerHTML = `${minutes}:${seconds}`;
-    time--;
+    appendTime.innerHTML = `${minutes}:${seconds}`
+    time--
   }
 }
 
 function createRandomPosition() {
-  const mainFormTimer = document.querySelector(".mainFormTimer");
+  const mainFormTimer = document.querySelector(".mainFormTimer")
 
-  const widthMainFormTimer = mainFormTimer.clientWidth
-  const heightMainFormTimer = mainFormTimer.clientHeight
+  getCoordinatesForMenu(mainFormTimer)
 
-  const { width, height } = document.body.getBoundingClientRect();
+  let getColorShadow = getRandomColor()
+  let getColorBackGround = getRandomColor()
+  let getColorText = getRandomColor()
 
-  const x = random(0, width - widthMainFormTimer);
-  const y = random(0, height - heightMainFormTimer);
-
-  if(x > width - widthMainFormTimer*2) mainFormTimer.style.left = x - widthMainFormTimer + 'px'
-  else mainFormTimer.style.left = x + 'px'
-  if(y > height - heightMainFormTimer*2) mainFormTimer.style.top = y - heightMainFormTimer + 'px'
-  else mainFormTimer.style.top = y + 'px'
-
-  let getColorShadow = getRandomColor();
-  let getColorBackGround = getRandomColor();
-  let getColorText = getRandomColor();
-
-  mainFormTimer.style.color = getColorText;
-  mainFormTimer.style.background = getColorBackGround;
-  mainFormTimer.style.boxShadow = `0 0 2px ${getColorShadow}, 0 0 10px ${getColorShadow}`;
+  document.querySelector('#minutesAndSeconds').style.color = getColorText
+  mainFormTimer.style.background = getColorBackGround
+  mainFormTimer.style.boxShadow = `0 0 2px ${getColorShadow}, 0 0 10px ${getColorShadow}`
 }

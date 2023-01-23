@@ -1,5 +1,5 @@
 import { Module } from '../core/module'
-import { runClicker } from '../core/utils/clicks';
+import { runClicker } from '../core/utils/clicks'
 
 export class ClicksModule extends Module {
     constructor (type, text) {
@@ -7,8 +7,8 @@ export class ClicksModule extends Module {
 
         this.warning = document.createElement('div')
         this.clickerButton = document.createElement('button')
-        this.time = 0;
-        this.clicks = 0;
+        this.time = 0
+        this.clicks = 0
     }
 
     trigger() {

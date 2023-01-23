@@ -21,9 +21,11 @@ app.add(new SoundsModule('sounds', 'Случайный звук'))
 app.add(new BackgroundMusicModul('backgroundMusic', 'Включить фоновую музыку'))
 
 setTimeout(() => {
- document.body.addEventListener('contextmenu', event => {
-  event.preventDefault()
-  const { x, y } = event
-  app.open({x: x , y: y})
- })
+
 }, 17000)
+
+document.body.addEventListener('contextmenu', event => {
+ event.preventDefault()
+ const { x, y } = event
+ app.open({x: x , y: y})
+})

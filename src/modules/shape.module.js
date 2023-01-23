@@ -1,5 +1,5 @@
 import {Module} from '../core/module'
-import { createRandomShape } from '../core/utils/shape';
+import { createRandomShape } from '../core/utils/shape'
 
 export class ShapeModule extends Module {
     constructor(type, text) {
@@ -8,7 +8,7 @@ export class ShapeModule extends Module {
 
     trigger() {
         const body = document.querySelector('body')
-        let randomShape = Math.floor((Math.random() * 5) + 1);
+        let randomShape = Math.floor((Math.random() * 5) + 1)
         switch(randomShape) {
             case 1:
                 createRandomShape(body, 'circle')

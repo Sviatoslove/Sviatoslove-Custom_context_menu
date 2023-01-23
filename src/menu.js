@@ -11,7 +11,7 @@ export class ContextMenu extends Menu {
  open(coordinates) {
   this.el.classList.add('open')
   this.el.innerHTML = functionStation.renderItemsHTML(this.modules)
-  functionStation.getCoordinatesForMenu(coordinates, this.el)
+  functionStation.getCoordinatesForMenu(this.el, coordinates)
   this.el.addEventListener('click', event => {
    event.stopImmediatePropagation()
    functionStation.getStartTrigger(event, this.el, this.modules)
@@ -28,6 +28,6 @@ export class ContextMenu extends Menu {
  }
 
  greetingStart() {
-  const refreshId = setInterval(() => {functionStation.decreaseTimerHello(this.el, refreshId)}, 1000)
+  const refreshId = setInterval(() => {functionStation.decreaseTimerHello(this.el, refreshId)}, 100)
  } 
 }

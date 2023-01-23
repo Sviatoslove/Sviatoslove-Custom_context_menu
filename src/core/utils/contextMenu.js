@@ -1,8 +1,14 @@
 import { random } from "../../utils"
 import { getRandomColor } from "./background"
 
-export function getCoordinatesForMenu(coordinates, elem) {
+export function getCoordinatesForMenu(elem, coordinates) {
  const { width, height } = document.body.getBoundingClientRect()
+  if(!coordinates) {
+    coordinates = {
+      x: random(10, width - 10),
+      y: random(10, height - 10)
+    }
+  }
 
  if(coordinates.x > width - elem.clientWidth) elem.style.left = coordinates.x - elem.clientWidth + 'px'
  else elem.style.left = coordinates.x + 'px'
@@ -26,18 +32,19 @@ export function getCurrentModule(type, arr) {
  return arr.find(module => module.type === type)
 }
 
-let time = 16
+let time = 1000
 
 export function decreaseTimerHello(elem, refreshId) {
- let current
- if(time === 0) {
-  elem.classList.remove('timer')
-  randomColorsAll(elem, time)
-  clearInterval(refreshId)
-  return
- }
+  if(time === 0) {
+    elem.classList.remove('timer')
+    randomColorsAll(elem, time)
+    clearInterval(refreshId)
+    return
+  }
 
- getCoordinatesForMenu({x: random(50, 600), y: random(200, 600)}, elem)
+ let current
+
+ getCoordinatesForMenu(elem)
 
  elem.classList.add('timer')
  current = --time

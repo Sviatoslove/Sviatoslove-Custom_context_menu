@@ -3,12 +3,14 @@ export class Menu {
     this.el = document.querySelector(selector)
 
     setTimeout(() => {
-      document.body.addEventListener('click', event => {
-        if (event.target.offsetParent !== this.el) {
-          this.close()
-        }
-      })
+   
     },17000)
+
+    document.body.addEventListener('click', event => {
+      if (event.target.offsetParent !== this.el) {
+        this.close()
+      }
+    })
   }
 
   open() {
